@@ -2,8 +2,6 @@
 
 set -e
 
-printenv
-
 echo ">>>> Changing directory to repository <<<<"
 cd chengrui.nl
 
