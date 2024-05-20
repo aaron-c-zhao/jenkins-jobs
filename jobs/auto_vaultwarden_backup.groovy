@@ -9,9 +9,11 @@ job('auto_vault_backup') {
     }
 
     steps {
-        buildInDocker {
-            dockerfile ('scripts/vault_backup',dockerfile = 'Dockerfile')
-            volume("${env.WORKSPACE}/export", "/vault_export")
+        wrappers {
+            buildInDocker {
+                dockerfile ('scripts/vault_backup',dockerfile = 'Dockerfile')
+                volume("${env.WORKSPACE}/export", "/vault_export")
+            }
         }
     }
 }
