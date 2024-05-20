@@ -11,7 +11,7 @@ job('auto_vault_backup') {
     steps {
         wrappers {
             buildInDocker {
-                dockerfile ('scripts/vault_backup',dockerfile = 'Dockerfile')
+                dockerfile ()
                 volume("${WORKSPACE}/export", "/vault_export")
             }
         }
