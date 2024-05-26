@@ -5,7 +5,7 @@ job('auto_vault_backup') {
     scm {
         git {
             remote {
-                github('aaron-c-zhao/secrete', 'ssh')
+                github('aaron-c-zhao/secret', 'ssh')
                 credentials('jenkins-github-sync')
             }
             extensions {
