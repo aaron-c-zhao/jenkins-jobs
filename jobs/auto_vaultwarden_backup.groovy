@@ -2,6 +2,18 @@ job('auto_vault_backup') {
     triggers {
         cron('@daily')
     }
+    scm {
+        git {
+            remote {
+                github('aaron-c-zhao/secrete', 'ssh')
+                credentials('jenkins-github-sync')
+            }
+            extensions {
+                cleanBeforeCheckout()
+                wipeOutWorkspace()
+            }
+        }
+    }
 
     parameters {
         stringParam('git_usr', null, 'github user')
