@@ -25,6 +25,7 @@ job('auto_vault_backup') {
             buildInDocker {
                 dockerfile ()
                 volume("${WORKSPACE}/export", "/vault_export")
+                verbose(true)
             }
         }
     }
